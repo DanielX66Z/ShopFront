@@ -1,0 +1,38 @@
+<div class="list row">
+
+  <div class="col-md-6">
+    <h4>Lista de ordenes</h4>
+
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="idOrdenes">
+          <th mat-header-cell *matHeaderCellDef> idOrdenes </th>
+          <td mat-cell *matCellDef="let ordenes"> {{ordenes.idOrdenes}} </td>
+        </ng-container>
+        <ng-container matColumnDef="productos">
+          <th mat-header-cell *matHeaderCellDef> productos </th>
+          <td mat-cell *matCellDef="let ordenes"> {{ordenes.productos.nombre}} </td>
+        </ng-container>
+        <ng-container matColumnDef="clientes">
+          <th mat-header-cell *matHeaderCellDef> clientes </th>
+          <td mat-cell *matCellDef="let ordenes"> {{ordenes.clientes.nombre}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cantidad">
+          <th mat-header-cell *matHeaderCellDef> cantidad </th>
+          <td mat-cell *matCellDef="let ordenes"> {{ordenes.cantidad}} </td>
+        </ng-container>
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef> total </th>
+          <td mat-cell *matCellDef="let ordenes"> {{ordenes.total}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+         <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+
+      </table>
+    </div>
+  </div>
+</div>

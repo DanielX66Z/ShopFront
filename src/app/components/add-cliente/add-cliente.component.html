@@ -1,0 +1,38 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="nombre">Nombre del cliente</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          required
+          minlength="3"
+          [(ngModel)]="clientes.nombre"
+          name="Nombre"
+        />
+      </div>
+      <div class="form-group">
+        <label for="direccion">Direccion del cliente</label>
+        <input
+          class="form-control"
+          id="direccion"
+          name="direccion"
+          required
+          minlength="5"
+          [(ngModel)]="clientes.direccion"
+          name="descripcion"
+        />
+
+        <button (click)="saveNewCliente()" class="btn btn-success">
+          Submit
+        </button>
+      </div>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Cliente creado correctamente!</h4>
+      <button class="btn btn-success" (click)="newCliente()">Nuevo</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<mat-toolbar color=”primary”>
+  <span>Ordenes de productos</span>
+  <button mat-button [matMenuTriggerFor]="menu">Clientes</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="'add-cliente'" >Agregar</button>
+    <button mat-menu-item [routerLink]="'clientes'">Listar</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menu2">Productos</button>
+  <mat-menu #menu2="matMenu">
+    <button mat-menu-item [routerLink]="'add-producto'">Agregar</button>
+    <button mat-menu-item [routerLink]="'productos'">Listar</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menu3">Ordenes</button>
+  <mat-menu #menu3="matMenu">
+    <button mat-menu-item [routerLink]="'ordenes'">Listar</button>
+  </mat-menu>
+
+
+</mat-toolbar>
+
+<div  class="container">
+  <router-outlet></router-outlet>
+
+</div>
+
